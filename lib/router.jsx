@@ -17,3 +17,13 @@ FlowRouter.route('/request', {
     });
   }
 });
+
+FlowRouter.route('/new-ninja', {
+  name: 'NewNinja',
+    action() {
+      ReactLayout.render(App, {
+        content: <NewNinja />,
+        nav: <Nav />
+      });
+  }
+});
