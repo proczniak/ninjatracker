@@ -7,3 +7,13 @@ FlowRouter.route('/', {
     });
   }
 });
+
+FlowRouter.route('/request', {
+  name: 'RequestForm',
+  action() {
+    ReactLayout.render(RequestForm, {
+      content: <RequestForm />,
+      nav: ''
+    });
+  }
+});
