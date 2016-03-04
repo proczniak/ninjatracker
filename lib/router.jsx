@@ -27,3 +27,13 @@ FlowRouter.route('/new-ninja', {
       });
   }
 });
+
+FlowRouter.route('/ninjas', {
+  name: 'NinjasList',
+  action() {
+    ReactLayout.render(App, {
+      content: <NinjasList />,
+      nav: <Nav />
+    });
+  }
+});
