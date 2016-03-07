@@ -39,3 +39,19 @@ Ninjas.helpers({
 });
 
 Ninjas.permit(['insert', 'update', 'remove']).ifLoggedIn().apply();
+
+Meteor.methods({
+  addNinja(ninja) {
+    if (! Meteor.userId()) {
+      return
+    }
+
+    Ninjas.insert({
+      firstName: ninja.firstName,
+      lastName: ninja.lastName,
+      score: 0,
+      status: true,
+      jobsCompleted: 0
+    });
+  }
+});
