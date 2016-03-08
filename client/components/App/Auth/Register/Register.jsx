@@ -6,10 +6,14 @@ Register = React.createClass({
     Accounts.createUser({
       email: email,
       password: password
+    }, function (error) {
+      if (error) {
+        sAlert.error(error.reason, {effect: 'genie', position: 'top'});
+      } else {
+        FlowRouter.go('/');
+      }
     });
-    FlowRouter.go('/');
   },
-
   render(){
     return(
       <div className="col-xs-12 col-sm-6">

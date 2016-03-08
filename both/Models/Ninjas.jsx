@@ -52,8 +52,6 @@ Meteor.methods({
       score: 0,
       status: true,
       jobsCompleted: 0
-    }, function(){
-      alert('Ninja added successfully.');
     });
   },
   editNinja(ninja) {
@@ -63,8 +61,6 @@ Meteor.methods({
 
     Ninjas.update(ninja._id, {
       $set: {firstName: ninja.firstName, lastName: ninja.lastName}
-    }, function() {
-      alert('Ninja edited.')
     });
   }
 });
