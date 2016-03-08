@@ -9,6 +9,7 @@ NewNinja = React.createClass({
     Meteor.call('addNinja', ninja);
     $('#firstName').val('');
     $('#lastName').val('');
+
   },
 
   render() {

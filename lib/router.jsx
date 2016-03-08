@@ -55,3 +55,13 @@ FlowRouter.route('/register', {
     });
   }
 });
+
+FlowRouter.route('/edit/:_id', {
+  name: 'EditNinja',
+  action(params) {
+    ReactLayout.render(App, {
+      content: <EditNinja name="EditNinja" ninja={params._id} />,
+      nav: <Nav />
+    });
+  }
+});

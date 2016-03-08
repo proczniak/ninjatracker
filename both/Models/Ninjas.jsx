@@ -52,6 +52,29 @@ Meteor.methods({
       score: 0,
       status: true,
       jobsCompleted: 0
+    }, function(){
+      alert('Ninja added successfully.');
+    });
+  },
+  editNinja(ninja) {
+    if(! Meteor.userId()){
+      return
+    }
+
+    Ninjas.update(ninja._id, {
+      $set: {firstName: ninja.firstName, lastName: ninja.lastName}
+    }, function() {
+      alert('Ninja edited.')
     });
   }
 });
+
+if (Meteor.isServer) {
+  Meteor.publish('ninjas', function(){
+    return Ninjas.find();
+  });
+
+  Meteor.publish('ninja', function(id){
+    return Ninjas.find({_id: id});
+  });
+}

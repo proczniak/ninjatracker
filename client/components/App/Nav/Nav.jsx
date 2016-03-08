@@ -2,6 +2,7 @@ Nav = React.createClass({
   mixins: [ReactMeteorData],
 
   getMeteorData(){
+    Meteor.subscribe('ninja', this.props.ninja);
     return {
       loggedIn: !!Meteor.user()
     }
@@ -26,7 +27,7 @@ Nav = React.createClass({
       <ul className="nav nav-pills nav-stacked">
         <li><a href="/">Dashboard</a></li>
         <li><a href="/new-ninja">New Ninja</a></li>
-        <li><a href="ninjas">List Ninjas</a></li>
+        <li><a href="/ninjas">List Ninjas</a></li>
         {this.getLoginLink()}
       </ul>
     )
