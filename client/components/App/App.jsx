@@ -18,7 +18,7 @@ App = React.createClass({
   showLayout(){
     if (this.props.content.props.name == 'Request') {
       return (
-        <div classNAme="col-xs-12 col-sm-6 col-sm-offset-3 text-center">
+        <div className="col-xs-12 col-sm-6 col-sm-offset-3 text-center">
           {this.props.content}
         </div>
       )
