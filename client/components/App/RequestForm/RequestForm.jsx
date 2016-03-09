@@ -11,9 +11,10 @@ RequestForm = React.createClass({
         return sAlert.error(error.reason, {effect: 'genie'});
       }
       else {
-        $('#clientName').val();
-        $('#target').val();
-        return sAlert.success('Your request has been received. Target will be eliminated.', {effect: 'genie'});
+        $('#clientName').val('');
+        $('#target').val('');
+        return sAlert.success('Your request has been received. Target will be eliminated.',
+          {effect: 'genie'});
       }
     });
   },
@@ -22,7 +23,7 @@ RequestForm = React.createClass({
     return (
       <div>
         <h1>Client Request Form</h1>
-        <form onSUbmit={this.submitRequest} id="client-request-form">
+        <form onSubmit={this.submitRequest} id="client-request-form">
           <div className="form-group">
             <label htmlFor="name">Your Name:</label>
             <input type="text" id="name" name="name" className="form-control"/>

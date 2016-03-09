@@ -58,5 +58,16 @@ App = React.createClass({
         </div>
       </div>
     )
+  },
+
+  componentDidMount() {
+    var count = 0;
+    Tracker.autorun(function(){
+      count++;
+      var requests = Requests.find().count();
+      if (count > 2 && Meteor.user()) {
+        sAlert.success('New request. <a href="/">Go to Dashboard</a>', {html: true, effect: 'genie'});
+      }
+    });
   }
 });
