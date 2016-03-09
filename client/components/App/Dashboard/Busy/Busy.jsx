@@ -1,11 +1,26 @@
-Available = React.createClass({
+//Busy = React.createClass({
+//  render() {
+//    return (
+//      <div className="panel panel-default">
+//        <div className="panel-heading">
+//          <h1>Busy</h1>
+//        </div>
+//        <div className="panel-content">
+//
+//        </div>
+//      </div>
+//    )
+//  }
+//});
+
+Busy = React.createClass({
   mixins: [
     ReactMeteorData
   ],
   getMeteorData() {
     Meteor.subscribe('ninjas');
     return {
-      ninjas: Ninjas.find({status: true}).fetch()
+      ninjas: Ninjas.find({status: false}).fetch()
     }
   },
   renderNinjas() {
@@ -18,7 +33,7 @@ Available = React.createClass({
     return (
       <div className="panel panel-default">
         <div className="panel-heading">
-          <h1>Available</h1>
+          <h1>Busy</h1>
         </div>
         <div className="panel-content">
           <div className="row">
@@ -29,4 +44,3 @@ Available = React.createClass({
     )
   }
 });
-

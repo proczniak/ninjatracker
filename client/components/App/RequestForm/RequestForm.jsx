@@ -11,7 +11,7 @@ RequestForm = React.createClass({
         return sAlert.error(error.reason, {effect: 'genie'});
       }
       else {
-        $('#clientName').val('');
+        $('#name').val('');
         $('#target').val('');
         return sAlert.success('Your request has been received. Target will be eliminated.',
           {effect: 'genie'});

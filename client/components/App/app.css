@@ -1,3 +1,7 @@
 .main-container {
     margin-top: 50px;
 }
+
+.panel-content {
+    padding: 15px;
+}
