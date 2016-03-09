@@ -1,17 +1,3 @@
-//Busy = React.createClass({
-//  render() {
-//    return (
-//      <div className="panel panel-default">
-//        <div className="panel-heading">
-//          <h1>Busy</h1>
-//        </div>
-//        <div className="panel-content">
-//
-//        </div>
-//      </div>
-//    )
-//  }
-//});
 
 Busy = React.createClass({
   mixins: [
