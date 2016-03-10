@@ -15,7 +15,8 @@ Request = React.createClass({
     showAssignNinja(e) {
         e.preventDefault();
         $(e.target).hide();
-        $(e.target).next().show;
+        $(e.target).next().show();
+
     },
     assignNinja(e) {
         e.preventDefault();
@@ -27,7 +28,8 @@ Request = React.createClass({
 
     render() {
         return (
-            <div className="col-xs-3">
+
+            <div className="col-sm-4">
                 <div className="request panel panel-default">
                     <a href="#" className="assign-ninja btn btn-primary" id="showAssignNinja"
                        onClick={this.showAssignNinja}>
@@ -37,7 +39,7 @@ Request = React.createClass({
                         <select name="ninjas" id="ninjas">
                             <option value="0">Choose a ninja...</option>
                             {this.ninjaSelect()}
-                        </select>
+                        </select><br />
                         <a href="#" className="btn btn-primary" id="assignNinja"
                            onClick={this.assignNinja}>
                             Assign
@@ -47,6 +49,8 @@ Request = React.createClass({
                     <h2>{this.props.request.target}</h2>
                 </div>
             </div>
+
+
         )
     }
 });

@@ -12,7 +12,7 @@ RequestsComponent = React.createClass({
 
   renderRequests() {
     return this.data.requests.map((request) => {
-      return <Request key={request._id} request={request} />;
+      return <Request key={request._id} request={request}/>;
     });
   },
 
@@ -23,8 +23,11 @@ RequestsComponent = React.createClass({
           <h1>Open Requests</h1>
         </div>
         <div className="panel-content">
-          { this.renderRequests() }
+          <div className="row">
+            { this.renderRequests() }
+          </div>
         </div>
+
       </div>
     )
   }
