@@ -26,6 +26,9 @@ Request = React.createClass({
         Meteor.call('updateRequest', request);
     },
 
+    componentDidMount() {
+        $(".select-ninja").hide();
+    },
     render() {
         return (
 
